@@ -74,82 +74,84 @@ class _ProductScreenState extends State<ProductScreen> {
   appBar() {
     final recentlyAddedAPIProvider =
         Provider.of<RecentAddedProductsAPIProvider>(context);
-    if (recentlyAddedAPIProvider.productDetails == null) {
-      return Center(
-        child: SizedBox(
-          height: 25,
-          width: 25,
-          child: CircularProgressIndicator(
-            strokeWidth: 1,
-          ),
-        ),
-      );
-    } else if (recentlyAddedAPIProvider.productDetails!.productDetails ==
-        null) {
-      return Center(
-        child: Text(recentlyAddedAPIProvider.productDetails!.message!),
-      );
-    }
+    // if (recentlyAddedAPIProvider.productDetails == null) {
+    //   return Center(
+    //     child: SizedBox(
+    //       height: 25,
+    //       width: 25,
+    //       child: CircularProgressIndicator(
+    //         strokeWidth: 1,
+    //       ),
+    //     ),
+    //   );
+    // } else if (recentlyAddedAPIProvider.productDetails!.productDetails ==
+    //     null) {
+    //   return Center(
+    //     child: Text(recentlyAddedAPIProvider.productDetails!.message!),
+    //   );
+    // }
     return ListTile(
       title: Form(
           key: searchKey,
           child: TextFormField(
             controller: searchController,
             onChanged: (value) {
-              searchList = recentlyAddedAPIProvider
-                  .productDetails!.productDetails!
-                  .where((element) {
-                return element.productName!
-                    .trim()
-                    .toUpperCase()
-                    .contains(searchController.text.trim().toUpperCase());
-                // return searchController.text
-                //     .trim()
-                //     .toUpperCase()
-                //     .contains();
-              }).toList();
-              print(" The value is empty  " + value.isEmpty.toString());
+              // searchList = recentlyAddedAPIProvider
+              //     .productDetails!.productDetails!
+              //     .where((element) {
+              //   return element.productName!
+              //       .trim()
+              //       .toUpperCase()
+              //       .contains(searchController.text.trim().toUpperCase());
+              //   // return searchController.text
+              //   //     .trim()
+              //   //     .toUpperCase()
+              //   //     .contains();
+              // }).toList();
+              // print(" The value is empty  " + value.isEmpty.toString());
 
-              if (value.isEmpty) {
-                searchList = context
-                    .read<RecentAddedProductsAPIProvider>()
-                    .productDetails!
-                    .productDetails;
-                searchController.clear();
-                print(" The value is empty  " + value.isEmpty.toString());
-                setState(() {
-                  searchEmpty = true;
-                });
-              } else {
-                print(searchList!.length);
-                setState(() {
-                  searchEmpty = false;
-                });
-              }
+              // if (value.isEmpty) {
+              //   searchList = context
+              //       .read<RecentAddedProductsAPIProvider>()
+              //       .productDetails!
+              //       .productDetails;
+              //   searchController.clear();
+              //   print(" The value is empty  " + value.isEmpty.toString());
+              //   setState(() {
+              //     searchEmpty = true;
+              //   });
+              // } else {
+              //   print(searchList!.length);
+              //   setState(() {
+              //     searchEmpty = false;
+              //   });
+              // }
             },
             decoration: InputDecoration(
               hintText: "Search",
 
-              suffixIcon: searchEmpty
-                  ? Padding(
-                      padding: const EdgeInsets.all(0.0),
-                      child: Icon(Icons.search, color: Colors.black87),
-                    )
-                  : Padding(
-                      padding: const EdgeInsets.all(0.0),
-                      child: InkWell(
-                          onTap: () {
-                            searchList = context
-                                .read<RecentAddedProductsAPIProvider>()
-                                .productDetails!
-                                .productDetails;
-                            setState(() {
-                              searchEmpty = true;
-                            });
-                            searchController.clear();
-                          },
-                          child: Icon(Icons.clear, color: Colors.black87)),
-                    ),
+              suffixIcon: /* searchEmpty
+                  ? */
+                  Padding(
+                padding: const EdgeInsets.all(0.0),
+                child: Icon(Icons.search, color: Colors.black87),
+              ),
+              // : Padding(
+              //     padding: const EdgeInsets.all(0.0),
+              //     child: InkWell(
+              //         onTap: () {
+              //           // searchList = context
+              //           //     .read<RecentAddedProductsAPIProvider>()
+              //           //     .productDetails!
+              //           //     .productDetails;
+              //           // setState(() {
+              //           //   searchEmpty = true;
+              //           // });
+              //           searchController.clear();
+              //         },
+              //         child: Icon(Icons.clear, color: Colors.black87)),
+              //   ),
+
               hintStyle: const TextStyle(
                   fontSize: 10,
                   fontWeight: FontWeight.bold,
@@ -170,24 +172,24 @@ class _ProductScreenState extends State<ProductScreen> {
   }
 
   Widget body(BuildContext context) {
-    final recentlyAddedAPIProvider =
-        Provider.of<RecentAddedProductsAPIProvider>(context);
-    if (recentlyAddedAPIProvider.productDetails == null) {
-      return Center(
-        child: SizedBox(
-          height: 25,
-          width: 25,
-          child: CircularProgressIndicator(
-            strokeWidth: 1,
-          ),
-        ),
-      );
-    } else if (recentlyAddedAPIProvider.productDetails!.productDetails ==
-        null) {
-      return Center(
-        child: Text(recentlyAddedAPIProvider.productDetails!.message!),
-      );
-    }
+    // final recentlyAddedAPIProvider =
+    //     Provider.of<RecentAddedProductsAPIProvider>(context);
+    // if (recentlyAddedAPIProvider.productDetails == null) {
+    //   return Center(
+    //     child: SizedBox(
+    //       height: 25,
+    //       width: 25,
+    //       child: CircularProgressIndicator(
+    //         strokeWidth: 1,
+    //       ),
+    //     ),
+    //   );
+    // } else if (recentlyAddedAPIProvider.productDetails!.productDetails ==
+    //     null) {
+    //   return Center(
+    //     child: Text(recentlyAddedAPIProvider.productDetails!.message!),
+    //   );
+    // }
     return RefreshIndicator(
       onRefresh: () async {
         await context.read<RecentAddedProductsAPIProvider>().fetchProduct();
@@ -206,60 +208,57 @@ class _ProductScreenState extends State<ProductScreen> {
           itemCount: searchList!.length,
           itemBuilder: (context, index) {
             return GridViewBox(
-              productModel: searchList![index],
-              imageUrl:
-                  recentlyAddedAPIProvider.productDetails!.productImageUrl!,
-            );
+                productModel: searchList![index],
+                imageUrl:
+                    'https://img.freepik.com/premium-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?w=2000');
           }),
     );
   }
 
   Widget? floatingActionbutton(BuildContext context) {
-    final profileModelAPIProvider =
-        Provider.of<ProfileModelAPIProvider>(context);
-    print(" profileModelAPIProvider.profileModel!.userDetails!.outletMainId " +
-        profileModelAPIProvider.profileModel!.userDetails!.outletMainId
-            .toString());
-    print(" profileModelAPIProvider.profileModel!.userDetails!.outletMainId " +
-        profileModelAPIProvider.profileModel!.userDetails!.outletMainId
-            .toString());
-    if (profileModelAPIProvider.ifLoading) {
-      return Utils.getLoadingCenter25();
-    } else if (profileModelAPIProvider.error) {
-      return Utils.showErrorMessage(profileModelAPIProvider.errorMessage);
-    } else if (profileModelAPIProvider.profileModel != null &&
-        profileModelAPIProvider.profileModel!.status == "0") {
-      return Utils.showErrorMessage(
-          profileModelAPIProvider.profileModel!.message!);
-    } else if (profileModelAPIProvider
-            .profileModel!.userDetails!.outletMainId ==
-        "") {
-      return FloatingActionButton.extended(
-        backgroundColor: Colors.lightGreen,
-        onPressed: () async {
-          await Navigator.of(context)
-              .push(MaterialPageRoute(
-                  builder: (context) => AddProductForGroceries()))
-              .whenComplete(() {
-            searchList = context
-                .read<RecentAddedProductsAPIProvider>()
-                .productDetails!
-                .productDetails;
-            setState(() {});
-          });
-        },
-        label: Text(
-          "Add Product",
-          style: CommonStyles.textDataWhite15(),
-        ),
-        icon: const Icon(
-          Icons.add,
-          color: Colors.white,
-          size: 20,
-        ),
-      );
-    }
-    return null;
+    // final profileModelAPIProvider =
+    //     Provider.of<ProfileModelAPIProvider>(context);
+    // print(" profileModelAPIProvider.profileModel!.userDetails!.outletMainId " +
+    //     profileModelAPIProvider.profileModel!.userDetails!.outletMainId
+    //         .toString());
+    // print(" profileModelAPIProvider.profileModel!.userDetails!.outletMainId " +
+    //     profileModelAPIProvider.profileModel!.userDetails!.outletMainId
+    //         .toString());
+    // if (profileModelAPIProvider.ifLoading) {
+    //   return Utils.getLoadingCenter25();
+    // } else if (profileModelAPIProvider.error) {
+    //   return Utils.showErrorMessage(profileModelAPIProvider.errorMessage);
+    // } else if (profileModelAPIProvider.profileModel != null &&
+    //     profileModelAPIProvider.profileModel!.status == "0") {
+    //   return Utils.showErrorMessage(
+    //       profileModelAPIProvider.profileModel!.message!);
+    // } else if (profileModelAPIProvider
+    //         .profileModel!.userDetails!.outletMainId ==
+    //     "") {
+    return FloatingActionButton.extended(
+      backgroundColor: Colors.lightGreen,
+      onPressed: () async {
+        // await Navigator.of(context)
+        //     .push(MaterialPageRoute(
+        //         builder: (context) => AddProductForGroceries()))
+        //     .whenComplete(() {
+        //   searchList = context
+        //       .read<RecentAddedProductsAPIProvider>()
+        //       .productDetails!
+        //       .productDetails;
+        setState(() {});
+        // });
+      },
+      label: Text(
+        "Add Product",
+        style: CommonStyles.textDataWhite15(),
+      ),
+      icon: const Icon(
+        Icons.add,
+        color: Colors.white,
+        size: 20,
+      ),
+    );
   }
 }
 
@@ -524,7 +523,7 @@ class _AddGrocery extends State<AddProductForGroceries> {
                 child: FittedBox(
                   child: Text(
                     value.limits!,
-                    style: TextStyle(fontSize: 14),
+                    style: const TextStyle(fontSize: 14),
                   ),
                 ),
               );

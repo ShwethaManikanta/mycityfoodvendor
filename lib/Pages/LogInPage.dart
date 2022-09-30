@@ -62,7 +62,7 @@ class LoginState extends State<LoginPage> {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage(
-                          "assets/images/splashImg.png",
+                          "assets/images/mycitylogo.png",
                         ),
                         fit: BoxFit.contain),
                   ),
@@ -73,7 +73,7 @@ class LoginState extends State<LoginPage> {
                 child: Text(
                   "Email".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent),
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -106,12 +106,12 @@ class LoginState extends State<LoginPage> {
                       labelStyle: TextStyle(color: Colors.black),
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: (Colors.orange[600])!,
+                          color: Colors.deepPurpleAccent,
                         ),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: (Colors.orange[900])!,
+                          color: Colors.deepPurpleAccent,
                         ),
                       ),
                       contentPadding:
@@ -131,7 +131,7 @@ class LoginState extends State<LoginPage> {
                 child: Text(
                   "Password".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: Colors.deepPurpleAccent,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -163,12 +163,12 @@ class LoginState extends State<LoginPage> {
                       labelStyle: TextStyle(color: Colors.black),
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: (Colors.orange[600])!,
+                          color: Colors.deepPurpleAccent,
                         ),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: (Colors.orange[900])!,
+                          color: Colors.deepPurpleAccent,
                         ),
                       ),
                       contentPadding:
@@ -245,7 +245,7 @@ class LoginState extends State<LoginPage> {
                   },
                   child: Text("Forgot Password ?",
                       style: TextStyle(
-                          color: (Colors.orange[900])!,
+                          color: Colors.deepPurpleAccent,
                           fontSize: 15,
                           fontWeight: FontWeight.bold)),
                 ),
@@ -343,7 +343,7 @@ class LoginState extends State<LoginPage> {
                           fontWeight: FontWeight.bold)),
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          (Colors.orange[900])!),
+                          Colors.deepPurpleAccent),
                       shape: MaterialStateProperty.all<OutlinedBorder>(
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)),
@@ -362,7 +362,7 @@ class LoginState extends State<LoginPage> {
                     child: Text(
                       "Don't have an account?",
                       style: TextStyle(
-                        color: (Colors.orange[900])!,
+                        color: Colors.deepPurpleAccent,
                         fontSize: 16,
                         fontWeight: FontWeight.w300,
                       ),
@@ -378,7 +378,7 @@ class LoginState extends State<LoginPage> {
                     child: Container(
                       child: Text("Register",
                           style: TextStyle(
-                              color: (Colors.orange[900])!,
+                              color: Colors.deepPurpleAccent,
                               fontSize: 16,
                               fontWeight: FontWeight.bold)),
                     ),

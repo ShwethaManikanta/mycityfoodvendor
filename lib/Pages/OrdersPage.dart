@@ -644,9 +644,9 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
   }
 
   body() {
-    final orderHistoryAPIProvider =
-        Provider.of<OrderHistoryAPIProvider>(context);
-    if (orderHistoryAPIProvider.ifLoading) {
+    // final orderHistoryAPIProvider =
+    //     Provider.of<OrderHistoryAPIProvider>(context);
+    /* if (orderHistoryAPIProvider.ifLoading) {
       return SizedBox(
           height: 400,
           width: deviceWidth(context),
@@ -684,21 +684,20 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
       final orderHistoryModel = orderHistoryAPIProvider.orderHistoryResponse!;
       if (orderHistoryModel.orderHistory!.isEmpty) {
         return Utils.showErrorMessage("List Empty");
-      }
-      return ListView.builder(
-        physics: BouncingScrollPhysics(),
-        itemCount: orderHistoryModel.orderHistory!.length,
-        // .data!.order_history!.length,
-        itemBuilder: (BuildContext context, int index) {
-          return OrdersOngoingTakeAwayComponent(
-            orderHistory: orderHistoryModel.orderHistory![index],
-          );
-          // return OrdersOngoingDeliveryListCompontent(
-          //   orderHistory: orderHistoryModel.orderHistory![index],
-          // );
-        },
-      );
-    }
+      } */
+    return ListView.builder(
+      physics: BouncingScrollPhysics(),
+      itemCount: /* orderHistoryModel.orderHistory!.length */ 2,
+      // .data!.order_history!.length,
+      itemBuilder: (BuildContext context, int index) {
+        return OrdersOngoingTakeAwayComponent(
+            /* orderHistory: orderHistoryModel.orderHistory![index] */
+            );
+        // return OrdersOngoingDeliveryListCompontent(
+        //   orderHistory: orderHistoryModel.orderHistory![index],
+        // );
+      },
+    );
   }
 
   // getProperButton(String status) {

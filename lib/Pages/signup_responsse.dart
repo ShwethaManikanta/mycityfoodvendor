@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:mycityfoodvendor/Pages/HomePage.dart';
 import 'package:mycityfoodvendor/Pages/pick_location_google_maps_screen.dart';
 import 'package:mycityfoodvendor/common/common_styles.dart';
 import 'package:mycityfoodvendor/model/restaruant_type_model.dart';
@@ -207,7 +208,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                       },
                       child: CircleAvatar(
                         radius: 50,
-                        backgroundColor: Colors.orange[900],
+                        backgroundColor: Colors.deepPurpleAccent,
                         child: image != null
                             ? ClipRRect(
                                 borderRadius: BorderRadius.circular(50),
@@ -240,7 +241,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Resturant Name *".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -279,7 +280,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: (Colors.orange[900])!,
+                          color: (Colors.deepPurpleAccent)!,
                         ),
                       ),
                       contentPadding:
@@ -299,7 +300,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Restaurant Type".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent),
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -395,7 +396,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Delivery Service".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -446,7 +447,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Mobile Number *".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -483,7 +484,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: (Colors.orange[900])!,
+                          color: (Colors.deepPurpleAccent)!,
                         ),
                       ),
                       contentPadding:
@@ -503,7 +504,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Email *".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -541,7 +542,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: (Colors.orange[900])!,
+                          color: (Colors.deepPurpleAccent)!,
                         ),
                       ),
                       contentPadding:
@@ -561,7 +562,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Password *".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -598,7 +599,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: (Colors.orange[900])!,
+                          color: (Colors.deepPurpleAccent)!,
                         ),
                       ),
                       contentPadding:
@@ -624,7 +625,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
               //   child: Text(
               //     "Address *".toUpperCase(),
               //     style: TextStyle(
-              //         color: (Colors.orange[900])!,
+              //         color: (Colors.deepPurpleAccent)!,
               //         fontSize: 15,
               //         fontWeight: FontWeight.bold),
               //   ),
@@ -649,7 +650,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
               //         ),
               //         focusedBorder: UnderlineInputBorder(
               //           borderSide: BorderSide(
-              //             color: (Colors.orange[900])!,
+              //             color: (Colors.deepPurpleAccent)!,
               //           ),
               //         ),
               //         contentPadding:
@@ -669,7 +670,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Area *".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -700,7 +701,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: (Colors.orange[900])!,
+                          color: (Colors.deepPurpleAccent)!,
                         ),
                       ),
                       contentPadding:
@@ -759,7 +760,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                         child: Row(
                           children: [
                             Icon(Icons.location_on,
-                                color: (Colors.orange[900])!),
+                                color: (Colors.deepPurpleAccent)!),
                             SizedBox(
                               width: 10,
                             ),
@@ -850,7 +851,8 @@ class _SignUpResponseState extends State<SignUpResponse> {
                         margin: EdgeInsets.symmetric(horizontal: 20),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.0),
-                            border: Border.all(color: (Colors.orange[900])!)),
+                            border:
+                                Border.all(color: (Colors.deepPurpleAccent)!)),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
@@ -874,7 +876,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Perparing Time".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -902,7 +904,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: (Colors.orange[900])!,
+                          color: (Colors.deepPurpleAccent)!,
                         ),
                       ),
                       contentPadding:
@@ -922,7 +924,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Type of Bussiness".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -1099,7 +1101,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Type of Food".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -1189,7 +1191,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Carry Bag Charge".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -1217,7 +1219,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: (Colors.orange[900])!,
+                          color: (Colors.deepPurpleAccent)!,
                         ),
                       ),
                       contentPadding:
@@ -1237,7 +1239,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Fssai Image".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -1306,14 +1308,14 @@ class _SignUpResponseState extends State<SignUpResponse> {
                               ? Text(
                                   "Fssai Number *".toUpperCase(),
                                   style: TextStyle(
-                                      color: (Colors.orange[900])!,
+                                      color: (Colors.deepPurpleAccent)!,
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
                                 )
                               : Text(
                                   "Fssai Number".toUpperCase(),
                                   style: TextStyle(
-                                      color: (Colors.orange[900])!,
+                                      color: (Colors.deepPurpleAccent)!,
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -1356,7 +1358,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                                 ),
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: (Colors.orange[900])!,
+                                    color: (Colors.deepPurpleAccent)!,
                                   ),
                                 ),
                                 contentPadding: EdgeInsets.symmetric(
@@ -1382,14 +1384,14 @@ class _SignUpResponseState extends State<SignUpResponse> {
                               ? Text(
                                   "Fssai Expiry Date *".toUpperCase(),
                                   style: TextStyle(
-                                      color: (Colors.orange[900])!,
+                                      color: (Colors.deepPurpleAccent)!,
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
                                 )
                               : Text(
                                   "Fssai Expiry Date".toUpperCase(),
                                   style: TextStyle(
-                                      color: (Colors.orange[900])!,
+                                      color: (Colors.deepPurpleAccent)!,
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -1472,7 +1474,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                                 ),
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: (Colors.orange[900])!,
+                                    color: (Colors.deepPurpleAccent)!,
                                   ),
                                 ),
                                 contentPadding: EdgeInsets.symmetric(
@@ -1497,7 +1499,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "GST Image".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -1554,7 +1556,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Gst Number".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -1582,7 +1584,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: (Colors.orange[900])!,
+                          color: (Colors.deepPurpleAccent)!,
                         ),
                       ),
                       contentPadding:
@@ -1602,7 +1604,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Pan Image".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -1661,7 +1663,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "PAN Number *".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -1695,7 +1697,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: (Colors.orange[900])!,
+                          color: (Colors.deepPurpleAccent)!,
                         ),
                       ),
                       contentPadding:
@@ -1715,7 +1717,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "UPI ID".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -1749,7 +1751,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
-                          color: (Colors.orange[900])!,
+                          color: (Colors.deepPurpleAccent)!,
                         ),
                       ),
                       contentPadding:
@@ -1769,7 +1771,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Menu Image".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -1835,7 +1837,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "CHEQUE Image ".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -1893,7 +1895,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: Text(
                   "Description ".toUpperCase(),
                   style: TextStyle(
-                      color: (Colors.orange[900])!,
+                      color: (Colors.deepPurpleAccent)!,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
@@ -1941,311 +1943,315 @@ class _SignUpResponseState extends State<SignUpResponse> {
                 child: ElevatedButton(
                   onPressed: checkBoxValue == true
                       ? () async {
-                          validateEmailPhoneProvider.initialize();
-                          signUpAPIProvider.initialize();
-                          if (selectedAddress != "" ||
-                              latitude != null ||
-                              longitude != null) {
-                            if (restaurantNameKey.currentState!.validate() &&
-                                mobileNoKey.currentState!.validate() &&
-                                emailKey.currentState!.validate() &&
-                                passwordKey.currentState!.validate() &&
-                                areaKey.currentState!.validate() &&
-                                panKey.currentState!.validate() &&
-                                fssaiKey.currentState!.validate() &&
-                                fssaiExpKey.currentState!.validate()) {
-                              showLoadingWithCustomText(
-                                  context, "Valadating User...");
-                              await validateEmailPhoneProvider
-                                  .validateEmailAndPhone(
-                                      email: emailController.text,
-                                      phoneNumber: mobileController.text);
-                              Navigator.of(context).pop();
-                              if (validateEmailPhoneProvider.error) {
-                                showErrorMessage(context,
-                                    validateEmailPhoneProvider.errorMessage);
-                              } else if (validateEmailPhoneProvider.response !=
-                                      null &&
-                                  validateEmailPhoneProvider.response!.status ==
-                                      "1") {
-                                if (image != null &&
-                                        image!.path != File('').path
-                                    // gstImg != null &&
-                                    // gstImg!.path != File('').path &&
-                                    // chequeImg != null &&
-                                    // chequeImg!.path != File('').path
+                          // validateEmailPhoneProvider.initialize();
+                          // signUpAPIProvider.initialize();
+                          // if (selectedAddress != "" ||
+                          //     latitude != null ||
+                          //     longitude != null) {
+                          //   if (restaurantNameKey.currentState!.validate() &&
+                          //       mobileNoKey.currentState!.validate() &&
+                          //       emailKey.currentState!.validate() &&
+                          //       passwordKey.currentState!.validate() &&
+                          //       areaKey.currentState!.validate() &&
+                          //       panKey.currentState!.validate() &&
+                          //       fssaiKey.currentState!.validate() &&
+                          //       fssaiExpKey.currentState!.validate()) {
+                          //     showLoadingWithCustomText(
+                          //         context, "Valadating User...");
+                          //     await validateEmailPhoneProvider
+                          //         .validateEmailAndPhone(
+                          //             email: emailController.text,
+                          //             phoneNumber: mobileController.text);
+                          //     Navigator.of(context).pop();
+                          //     if (validateEmailPhoneProvider.error) {
+                          //       showErrorMessage(context,
+                          //           validateEmailPhoneProvider.errorMessage);
+                          //     } else if (validateEmailPhoneProvider.response !=
+                          //             null &&
+                          //         validateEmailPhoneProvider.response!.status ==
+                          //             "1") {
+                          //       if (image != null &&
+                          //               image!.path != File('').path
+                          //           // gstImg != null &&
+                          //           // gstImg!.path != File('').path &&
+                          //           // chequeImg != null &&
+                          //           // chequeImg!.path != File('').path
 
-                                    ) {
-                                  showLoadingWithCustomText(
-                                      context, "Uploading Images...");
+                          //           ) {
+                          //         showLoadingWithCustomText(
+                          //             context, "Uploading Images...");
 
-                                  // final uploadImage =
-                                  //     await getapi.uploadImageByAsset(images.first);
+                          //         // final uploadImage =
+                          //         //     await getapi.uploadImageByAsset(images.first);
 
-                                  // multipleSelectedMenuImages
-                                  //     .forEach((element) async {
-                                  //   final result = await uploadMenuImage(element);
-                                  //   Future.delayed(Duration(microseconds: 100));
-                                  //   path += result! + ",";
-                                  // });
+                          //         // multipleSelectedMenuImages
+                          //         //     .forEach((element) async {
+                          //         //   final result = await uploadMenuImage(element);
+                          //         //   Future.delayed(Duration(microseconds: 100));
+                          //         //   path += result! + ",";
+                          //         // });
 
-                                  // print(
-                                  //     "imageResponse status -------------------- $path");
-                                  // if (images.isNotEmpty) {
-                                  //   images.forEach((element) async {
-                                  //     // File file =
-                                  //     //     await getImageFileFromAssets(element);
-                                  //     // await file.exists().then((value) async {
-                                  //     //   final string = await uploadMenuImage(file);
-                                  //     //   print("The value is " + string.toString());
-                                  //     // });
-                                  //     final imageResponse =
-                                  //         await getapi.uploadImageByAsset(element);
-                                  //     print("The image response object " +
-                                  //         imageResponse!.fileName.toString());
-                                  //     if (imageResponse.status == "1") {
-                                  //       print(
-                                  //           "imageResponse status -------------------- ${imageResponse.status}");
-                                  //       httpResponse.add(imageResponse.fileName!);
-                                  //     }
-                                  //   });
-                                  // }
+                          //         // print(
+                          //         //     "imageResponse status -------------------- $path");
+                          //         // if (images.isNotEmpty) {
+                          //         //   images.forEach((element) async {
+                          //         //     // File file =
+                          //         //     //     await getImageFileFromAssets(element);
+                          //         //     // await file.exists().then((value) async {
+                          //         //     //   final string = await uploadMenuImage(file);
+                          //         //     //   print("The value is " + string.toString());
+                          //         //     // });
+                          //         //     final imageResponse =
+                          //         //         await getapi.uploadImageByAsset(element);
+                          //         //     print("The image response object " +
+                          //         //         imageResponse!.fileName.toString());
+                          //         //     if (imageResponse.status == "1") {
+                          //         //       print(
+                          //         //           "imageResponse status -------------------- ${imageResponse.status}");
+                          //         //       httpResponse.add(imageResponse.fileName!);
+                          //         //     }
+                          //         //   });
+                          //         // }
 
-                                  // httpResponse.forEach((element) {
-                                  //   imagesString += element + ",";
-                                  // });
-                                  // print('Uploaded image string' + imagesString);
-                                  // print("Add cheque image " + );
-                                  // print("Restaurant Name      " +
-                                  //     restaurantNameController.text);
-                                  // print(
-                                  //     "Main sub restaurant selected Type      " +
-                                  //         main_sub_value.toString());
-                                  // print("SubRestaurant selected Id      " +
-                                  //             main_sub_value ==
-                                  //         "1"
-                                  //     ? ""
-                                  //     : selectedId.toString());
-                                  // print("Restaurant  Movile Number      " +
-                                  //     mobileController.text);
-                                  // print("Restaurant Email      " +
-                                  //     emailController.text);
-                                  // print("Restaurant Password      " +
-                                  //     passwordController.text);
-                                  // print("Restaurant selected address      " +
-                                  //     restaurantNameController.text);
-                                  // print("Restaurant preparing time      " +
-                                  //     deliveryTimeController.text);
-                                  // print("Restaurant type of business      " +
-                                  //     group_value);
+                          //         // httpResponse.forEach((element) {
+                          //         //   imagesString += element + ",";
+                          //         // });
+                          //         // print('Uploaded image string' + imagesString);
+                          //         // print("Add cheque image " + );
+                          //         // print("Restaurant Name      " +
+                          //         //     restaurantNameController.text);
+                          //         // print(
+                          //         //     "Main sub restaurant selected Type      " +
+                          //         //         main_sub_value.toString());
+                          //         // print("SubRestaurant selected Id      " +
+                          //         //             main_sub_value ==
+                          //         //         "1"
+                          //         //     ? ""
+                          //         //     : selectedId.toString());
+                          //         // print("Restaurant  Movile Number      " +
+                          //         //     mobileController.text);
+                          //         // print("Restaurant Email      " +
+                          //         //     emailController.text);
+                          //         // print("Restaurant Password      " +
+                          //         //     passwordController.text);
+                          //         // print("Restaurant selected address      " +
+                          //         //     restaurantNameController.text);
+                          //         // print("Restaurant preparing time      " +
+                          //         //     deliveryTimeController.text);
+                          //         // print("Restaurant type of business      " +
+                          //         //     group_value);
 
-                                  // print("Restaurant type of food      " +
-                                  //     select_food_type);
+                          //         // print("Restaurant type of food      " +
+                          //         //     select_food_type);
 
-                                  // print(" resaurant fssai Number" +
-                                  //     fssaiNoController.text);
-                                  // print(" resaurant fssai Expiry" +
-                                  //     fssaiExpDateController.text);
-                                  // print(" resaurant gst Number" +
-                                  //     gstController.text);
-                                  // print(" resaurant description " +
-                                  //     descripitionController.text);
+                          //         // print(" resaurant fssai Number" +
+                          //         //     fssaiNoController.text);
+                          //         // print(" resaurant fssai Expiry" +
+                          //         //     fssaiExpDateController.text);
+                          //         // print(" resaurant gst Number" +
+                          //         //     gstController.text);
+                          //         // print(" resaurant description " +
+                          //         //     descripitionController.text);
 
-                                  String menuCardImage = '';
-                                  print(
-                                      "upload profile image ------------- **************");
-                                  await uploadProfileImage();
-                                  print(
-                                      "upload profile image *************************** ");
+                          //         String menuCardImage = '';
+                          //         print(
+                          //             "upload profile image ------------- **************");
+                          //         await uploadProfileImage();
+                          //         print(
+                          //             "upload profile image *************************** ");
 
-                                  if (chequeImg != null &&
-                                      chequeImg!.path != File('').path) {
-                                    await updateChequeImage();
-                                  }
+                          //         if (chequeImg != null &&
+                          //             chequeImg!.path != File('').path) {
+                          //           await updateChequeImage();
+                          //         }
 
-                                  if (fssai_Image != null &&
-                                      fssai_Image!.path != File('').path) {
-                                    await uploadFssaiImage();
-                                  }
-                                  if (gstImg != null &&
-                                      gstImg!.path != File('').path) {
-                                    await updateGstImage();
-                                  }
-                                  if (panImageFile != null &&
-                                      panImageFile!.path != File('').path) {
-                                    await updatePANImage();
-                                  }
-                                  for (File imageFile
-                                      in multipleSelectedMenuImages) {
-                                    final result =
-                                        await uploadMenuImage(imageFile);
-                                    menuCardImage += result! + ",";
-                                    await Future.delayed(
-                                        Duration(microseconds: 100));
-                                  }
+                          //         if (fssai_Image != null &&
+                          //             fssai_Image!.path != File('').path) {
+                          //           await uploadFssaiImage();
+                          //         }
+                          //         if (gstImg != null &&
+                          //             gstImg!.path != File('').path) {
+                          //           await updateGstImage();
+                          //         }
+                          //         if (panImageFile != null &&
+                          //             panImageFile!.path != File('').path) {
+                          //           await updatePANImage();
+                          //         }
+                          //         for (File imageFile
+                          //             in multipleSelectedMenuImages) {
+                          //           final result =
+                          //               await uploadMenuImage(imageFile);
+                          //           menuCardImage += result! + ",";
+                          //           await Future.delayed(
+                          //               Duration(microseconds: 100));
+                          //         }
 
-                                  Navigator.of(context).pop();
+                          //         Navigator.of(context).pop();
 
-                                  Map<String, dynamic> param = {};
-                                  param.addAll({'type': main_sub_value});
-                                  param.addAll({
-                                    'outlet_id': id.isEmpty
-                                        ? ""
-                                        : id[selectedId].toString()
-                                  });
-                                  param.addAll({'email': emailController.text});
-                                  param.addAll(
-                                      {'password': passwordController.text});
-                                  param.addAll({'profile_image': profileimage});
-                                  param.addAll({'athar_image': '12.jpg'});
-                                  param.addAll({'gst_image': gstImgPath});
-                                  param
-                                      .addAll({'fssai_image': fssai_ImagePath});
-                                  param.addAll(
-                                      {'bank_checklist_image': chequeImgPath});
-                                  param.addAll(
-                                      {'fssai_number': fssaiNoController.text});
-                                  param.addAll({'gst': gstController.text});
-                                  param.addAll({'food_type': group_value});
-                                  param.addAll(
-                                      {'restaurant_type': select_food_type});
-                                  param.addAll({
-                                    'res_name': restaurantNameController.text
-                                  });
-                                  param.addAll(
-                                      {'mobile': mobileController.text});
+                          //         Map<String, dynamic> param = {};
+                          //         param.addAll({'type': main_sub_value});
+                          //         param.addAll({
+                          //           'outlet_id': id.isEmpty
+                          //               ? ""
+                          //               : id[selectedId].toString()
+                          //         });
+                          //         param.addAll({'email': emailController.text});
+                          //         param.addAll(
+                          //             {'password': passwordController.text});
+                          //         param.addAll({'profile_image': profileimage});
+                          //         param.addAll({'athar_image': '12.jpg'});
+                          //         param.addAll({'gst_image': gstImgPath});
+                          //         param
+                          //             .addAll({'fssai_image': fssai_ImagePath});
+                          //         param.addAll(
+                          //             {'bank_checklist_image': chequeImgPath});
+                          //         param.addAll(
+                          //             {'fssai_number': fssaiNoController.text});
+                          //         param.addAll({'gst': gstController.text});
+                          //         param.addAll({'food_type': group_value});
+                          //         param.addAll(
+                          //             {'restaurant_type': select_food_type});
+                          //         param.addAll({
+                          //           'res_name': restaurantNameController.text
+                          //         });
+                          //         param.addAll(
+                          //             {'mobile': mobileController.text});
 
-                                  param.addAll({
-                                    'mall_id': foodCourtAddressId.isEmpty
-                                        ? "0"
-                                        : foodCourtAddressId[
-                                            selectedFoddCourtId]
-                                  });
-                                  param.addAll({'address': selectedAddress});
-                                  param.addAll({
-                                    'description': descripitionController.text
-                                  });
-                                  param.addAll({'lat': latitude.toString()});
-                                  param.addAll({'upi_id': upiController.text});
-                                  param.addAll({'long': longitude.toString()});
-                                  param.addAll({
-                                    'accept_terms': checkBoxValue ? "1" : "0"
-                                  });
-                                  param.addAll(
-                                      {'mall_id': checkBoxValue ? "1" : "0"});
+                          //         param.addAll({
+                          //           'mall_id': foodCourtAddressId.isEmpty
+                          //               ? "0"
+                          //               : foodCourtAddressId[
+                          //                   selectedFoddCourtId]
+                          //         });
+                          //         param.addAll({'address': selectedAddress});
+                          //         param.addAll({
+                          //           'description': descripitionController.text
+                          //         });
+                          //         param.addAll({'lat': latitude.toString()});
+                          //         param.addAll({'upi_id': upiController.text});
+                          //         param.addAll({'long': longitude.toString()});
+                          //         param.addAll({
+                          //           'accept_terms': checkBoxValue ? "1" : "0"
+                          //         });
+                          //         param.addAll(
+                          //             {'mall_id': checkBoxValue ? "1" : "0"});
 
-                                  param.addAll({
-                                    'fssai_expiry_date':
-                                        fssaiExpDateController.text
-                                  });
-                                  param.addAll({'pan_image': panImagePath});
-                                  param.addAll(
-                                      {'pan_number': panController.text});
-                                  param.addAll({
-                                    'preparing_time':
-                                        deliveryTimeController.text
-                                  });
-                                  param.addAll({'area': areaController.text});
-                                  param.addAll(
-                                      {'delivery_partner': deliveryChoice});
-                                  //  param.addAll({'carry_bag': carryBagController.text});
-                                  param.addAll(
-                                      {'menu_card_image': menuCardImage});
-                                  String? token = await FirebaseMessaging
-                                      .instance
-                                      .getToken();
-                                  param.addAll({'device_token': token ?? "NA"});
+                          //         param.addAll({
+                          //           'fssai_expiry_date':
+                          //               fssaiExpDateController.text
+                          //         });
+                          //         param.addAll({'pan_image': panImagePath});
+                          //         param.addAll(
+                          //             {'pan_number': panController.text});
+                          //         param.addAll({
+                          //           'preparing_time':
+                          //               deliveryTimeController.text
+                          //         });
+                          //         param.addAll({'area': areaController.text});
+                          //         param.addAll(
+                          //             {'delivery_partner': deliveryChoice});
+                          //         //  param.addAll({'carry_bag': carryBagController.text});
+                          //         param.addAll(
+                          //             {'menu_card_image': menuCardImage});
+                          //         String? token = await FirebaseMessaging
+                          //             .instance
+                          //             .getToken();
+                          //         param.addAll({'device_token': token ?? "NA"});
 
-                                  showLoadingWithCustomText(
-                                      context, "Uploading Details...");
-                                  await signUpAPIProvider.signUp(
-                                      requestMap: param);
-                                  Navigator.of(context).pop();
-                                  if (signUpAPIProvider.error) {
-                                    showErrorMessage(context,
-                                        signUpAPIProvider.errorMessage);
-                                  } else if (signUpAPIProvider.signUpResponse ==
-                                          null ||
-                                      signUpAPIProvider
-                                              .signUpResponse!.status! ==
-                                          "0") {
-                                    showErrorMessage(
-                                        context,
-                                        signUpAPIProvider
-                                            .signUpResponse!.message!);
-                                  } else {
-                                    Utils.getSnackBar(
-                                        context, "Sign Up Successful!!");
-                                    Navigator.of(context).pop();
-                                  }
+                          //         showLoadingWithCustomText(
+                          //             context, "Uploading Details...");
+                          //         await signUpAPIProvider.signUp(
+                          //             requestMap: param);
+                          //         Navigator.of(context).pop();
+                          //         if (signUpAPIProvider.error) {
+                          //           showErrorMessage(context,
+                          //               signUpAPIProvider.errorMessage);
+                          //         } else if (signUpAPIProvider.signUpResponse ==
+                          //                 null ||
+                          //             signUpAPIProvider
+                          //                     .signUpResponse!.status! ==
+                          //                 "0") {
+                          //           showErrorMessage(
+                          //               context,
+                          //               signUpAPIProvider
+                          //                   .signUpResponse!.message!);
+                          //         } else {
+                          //           Utils.getSnackBar(
+                          //               context, "Sign Up Successful!!");
+                          //           Navigator.of(context).pop();
+                          //         }
 
-                                  // print("--------- ${param}");
-                                  // await getapi.reg(param).then((value) {
-                                  //   ScaffoldMessenger.of(context)
-                                  //       .showSnackBar(SnackBar(
-                                  //           content: Text(
-                                  //     "Register Successfully",
-                                  //     textAlign: TextAlign.center,
-                                  //   )));
-                                  //   Navigator.pushReplacementNamed(
-                                  //       context, 'LoginPage');
-                                  // });
-                                } else {
-                                  print("Else --------------");
-                                  if (image == null ||
-                                      image!.path == File('').path) {
-                                    Utils.getSnackBar(context,
-                                        "Please Upload Restaurant Profile Image");
-                                  }
-                                }
-                              } else {
-                                Utils.getSnackBar(
-                                    context,
-                                    validateEmailPhoneProvider
-                                        .response!.message!);
-                              }
-                            } else {
-                              if (restaurantNameKey.currentState!.validate() ==
-                                  false) {
-                                Utils.getSnackBar(context,
-                                    "Please Give Valid Restaurant Name");
-                              }
-                              if (mobileNoKey.currentState!.validate() ==
-                                  false) {
-                                Utils.getSnackBar(
-                                    context, "Please Give Valid Phone Number");
-                              }
-                              if (emailKey.currentState!.validate() == false) {
-                                Utils.getSnackBar(
-                                    context, "Please Give Valid Email");
-                              }
-                              if (passwordKey.currentState!.validate() ==
-                                  false) {
-                                Utils.getSnackBar(
-                                    context, "Please Give Valid Password");
-                              }
-                              if (areaKey.currentState!.validate() == false) {
-                                Utils.getSnackBar(
-                                    context, "Please Give Valid Area");
-                              }
-                              if (panKey.currentState!.validate() == false) {
-                                Utils.getSnackBar(
-                                    context, "Please Give Valid Pan Key");
-                              }
-                              if (fssaiKey.currentState!.validate() == false) {
-                                Utils.getSnackBar(
-                                    context, "Please Give Valid FSSAI");
-                              }
-                              if (fssaiExpKey.currentState!.validate() ==
-                                  false) {
-                                Utils.getSnackBar(context,
-                                    "Please Give Valid FSSAI Expiry Key");
-                              }
-                            }
-                          } else {
-                            Utils.getSnackBar(context,
-                                "Please Select Accurate Location From Map");
-                          }
+                          //         // print("--------- ${param}");
+                          //         // await getapi.reg(param).then((value) {
+                          //         //   ScaffoldMessenger.of(context)
+                          //         //       .showSnackBar(SnackBar(
+                          //         //           content: Text(
+                          //         //     "Register Successfully",
+                          //         //     textAlign: TextAlign.center,
+                          //         //   )));
+                          //         //   Navigator.pushReplacementNamed(
+                          //         //       context, 'LoginPage');
+                          //         // });
+                          //       } else {
+                          //         print("Else --------------");
+                          //         if (image == null ||
+                          //             image!.path == File('').path) {
+                          //           Utils.getSnackBar(context,
+                          //               "Please Upload Restaurant Profile Image");
+                          //         }
+                          //       }
+                          //     } else {
+                          //       Utils.getSnackBar(
+                          //           context,
+                          //           validateEmailPhoneProvider
+                          //               .response!.message!);
+                          //     }
+                          //   } else {
+                          //     if (restaurantNameKey.currentState!.validate() ==
+                          //         false) {
+                          //       Utils.getSnackBar(context,
+                          //           "Please Give Valid Restaurant Name");
+                          //     }
+                          //     if (mobileNoKey.currentState!.validate() ==
+                          //         false) {
+                          //       Utils.getSnackBar(
+                          //           context, "Please Give Valid Phone Number");
+                          //     }
+                          //     if (emailKey.currentState!.validate() == false) {
+                          //       Utils.getSnackBar(
+                          //           context, "Please Give Valid Email");
+                          //     }
+                          //     if (passwordKey.currentState!.validate() ==
+                          //         false) {
+                          //       Utils.getSnackBar(
+                          //           context, "Please Give Valid Password");
+                          //     }
+                          //     if (areaKey.currentState!.validate() == false) {
+                          //       Utils.getSnackBar(
+                          //           context, "Please Give Valid Area");
+                          //     }
+                          //     if (panKey.currentState!.validate() == false) {
+                          //       Utils.getSnackBar(
+                          //           context, "Please Give Valid Pan Key");
+                          //     }
+                          //     if (fssaiKey.currentState!.validate() == false) {
+                          //       Utils.getSnackBar(
+                          //           context, "Please Give Valid FSSAI");
+                          //     }
+                          //     if (fssaiExpKey.currentState!.validate() ==
+                          //         false) {
+                          //       Utils.getSnackBar(context,
+                          //           "Please Give Valid FSSAI Expiry Key");
+                          //     }
+                          //   }
+                          // } else {
+                          //   Utils.getSnackBar(context,
+                          //       "Please Select Accurate Location From Map");
+                          // }
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()));
                         }
                       : null,
                   child: Text("Register",
@@ -2255,7 +2261,9 @@ class _SignUpResponseState extends State<SignUpResponse> {
                           fontWeight: FontWeight.bold)),
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          (checkBoxValue ? Colors.orange[900] : Colors.grey)!),
+                          (checkBoxValue
+                              ? Colors.deepPurpleAccent
+                              : Colors.grey)!),
                       shape: MaterialStateProperty.all<OutlinedBorder>(
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)),
@@ -2359,7 +2367,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                     child: Text(
                       "Already have an account?",
                       style: TextStyle(
-                        color: (Colors.orange[900])!,
+                        color: (Colors.deepPurpleAccent)!,
                         fontSize: 16,
                         fontWeight: FontWeight.w300,
                       ),
@@ -2375,7 +2383,7 @@ class _SignUpResponseState extends State<SignUpResponse> {
                     child: Container(
                       child: Text("Log In",
                           style: TextStyle(
-                              color: (Colors.orange[900])!,
+                              color: (Colors.deepPurpleAccent)!,
                               fontSize: 16,
                               fontWeight: FontWeight.bold)),
                     ),

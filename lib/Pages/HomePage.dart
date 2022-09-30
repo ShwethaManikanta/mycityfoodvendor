@@ -147,59 +147,52 @@ class _HomePageState extends State<HomePage> {
     final GlobalKey<FormBuilderState> formKey = GlobalKey<FormBuilderState>();
     final profileAPIProvider = Provider.of<ProfileModelAPIProvider>(context);
     return AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 77, 45, 165),
         automaticallyImplyLeading: false,
         elevation: 0,
-        title: profileAPIProvider.ifLoading
-            ? SizedBox(
-                height: 2,
-                width: deviceWidth(context),
-                child: LinearProgressIndicator(),
-              )
-            : profileAPIProvider.error
-                ? Utils.showErrorMessage(profileAPIProvider.errorMessage)
-                : profileAPIProvider.profileModel!.userDetails == null
-                    ? Utils.showErrorMessage(
-                        profileAPIProvider.profileModel!.message!)
-                    : Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Close To Buy Restaurant".toUpperCase(),
-                            style: CommonStyles.textDataBlack12(),
-                          ),
-                          Switch(
-                              value: profileAPIProvider
-                                      .profileModel!.userDetails!.status ==
-                                  "1",
-                              activeColor: Colors.orange[900],
-                              onChanged: (value) async {
-                                profileAPIProvider.profileModel!.userDetails!
-                                            .status ==
-                                        "1"
-                                    ? Utils.getSnackBar(
-                                        context, "Restaurant turning off")
-                                    : Utils.getSnackBar(
-                                        context, "Restaurant turning on");
-                                Map param = {};
-                                param.addAll({"user_id": API.userData});
-                                param.addAll({
-                                  "status": profileAPIProvider.profileModel!
-                                              .userDetails!.status ==
-                                          "1"
-                                      ? "2"
-                                      : "1"
-                                });
+        // title: profileAPIProvider.ifLoading
+        //     ? SizedBox(
+        //         height: 2,
+        //         width: deviceWidth(context),
+        //         child: LinearProgressIndicator(),
+        //       )
+        //     : profileAPIProvider.error
+        //         ? Utils.showErrorMessage(profileAPIProvider.errorMessage)
+        //         : profileAPIProvider.profileModel!.userDetails == null
+        //             ? Utils.showErrorMessage(
+        //                 profileAPIProvider.profileModel!.message!)
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "My City Food Vendor".toUpperCase(),
+              style: CommonStyles.textDataWhite15(),
+            ),
+            Switch(
+                value: true,
+                // profileAPIProvider.profileModel!.userDetails!.status == "1",
+                activeColor: Color.fromARGB(255, 211, 127, 198),
+                onChanged: (value) async {
+                  profileAPIProvider.profileModel!.userDetails!.status == "1"
+                      ? Utils.getSnackBar(context, "Restaurant turning off")
+                      : Utils.getSnackBar(context, "Restaurant turning on");
+                  Map param = {};
+                  param.addAll({"user_id": API.userData});
+                  param.addAll({
+                    "status":
+                        profileAPIProvider.profileModel!.userDetails!.status ==
+                                "1"
+                            ? "2"
+                            : "1"
+                  });
 
-                                showLoading(context);
-                                await getapi.rebtaurantOnOff(context, param);
-                                context
-                                    .read<ProfileModelAPIProvider>()
-                                    .getProfileDetails();
-                                Navigator.of(context).pop();
-                              })
-                        ],
-                      )
+                  showLoading(context);
+                  await getapi.rebtaurantOnOff(context, param);
+                  context.read<ProfileModelAPIProvider>().getProfileDetails();
+                  Navigator.of(context).pop();
+                })
+          ],
+        )
 
         // FormBuilderSwitch(
         //     name: "status",
@@ -252,8 +245,8 @@ class _HomePageState extends State<HomePage> {
 
   buildBottomNavigationBar() {
     return TitledBottomNavigationBar(
-        activeColor: (Colors.orange[900])!,
-        inactiveColor: Colors.orangeAccent[700],
+        activeColor: Colors.deepPurpleAccent,
+        inactiveColor: Colors.deepPurpleAccent[200],
         currentIndex: bodyIndex,
         onTap: (index) {
           setState(() {

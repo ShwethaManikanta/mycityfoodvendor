@@ -39,39 +39,41 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   void initState() {
     super.initState();
-    fetchData = getapi.fetchAlbum({"user_id": API.userData}) as Future<ProfileModel>?;
+    fetchData =
+        getapi.fetchAlbum({"user_id": API.userData}) as Future<ProfileModel>?;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: FutureBuilder<ProfileModel>(
-        future: fetchData,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
-              child: Column(
-                children: [
-                  hotelImage(snapshot.data!),
-                  hotelDetails(snapshot.data!),
-                  walletDetails(snapshot.data!),
-                ],
-              ),
-            );
-          } else if (snapshot.hasError) {
-            return Text('${snapshot.error}');
-          }
+      body: /* FutureBuilder<ProfileModel> */ ListView.builder(
+        itemCount: 1,
+        // future: fetchData,
+        itemBuilder: (context, snapshot) {
+          // if (snapshot.hasData) {
+          return SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                hotelImage(/* snapshot.data! */),
+                hotelDetails(/* snapshot.data! */),
+                walletDetails(/* snapshot.data! */),
+              ],
+            ),
+          );
+          // } else if (snapshot.hasError) {
+          //   return Text('${snapshot.error}');
+          // }
 
-          // By default, show a loading spinner.
-          return Center(child: const CircularProgressIndicator());
+          // // By default, show a loading spinner.
+          // return Center(child: const CircularProgressIndicator());
         },
       ),
     );
   }
 
-  Widget hotelImage(ProfileModel data) {
+  Widget hotelImage(/* ProfileModel data */) {
     return AspectRatio(
         aspectRatio: 1,
         child: Container(
@@ -81,7 +83,8 @@ class _ProfilePageState extends State<ProfilePage> {
               color: Colors.blue,
               image: DecorationImage(
                   image: NetworkImage(
-                      data.profileBaseurl! + data.userDetails!.image!),
+                      "https://im1.dineout.co.in/images/uploads/restaurant/sharpen/2/b/f/p20236-1645174524620f5efc8c18a.jpg?tr=tr:n-medium"),
+                  // data.profileBaseurl! + data.userDetails!.image!),
                   fit: BoxFit.cover)),
         )
         // Carousel(
@@ -115,7 +118,7 @@ class _ProfilePageState extends State<ProfilePage> {
         );
   }
 
-  Widget hotelDetails(ProfileModel data) {
+  Widget hotelDetails(/* ProfileModel data */) {
     final formKey = GlobalKey<FormBuilderState>();
 
     return Container(
@@ -187,9 +190,7 @@ class _ProfilePageState extends State<ProfilePage> {
               name: 'res_name',
               enabled: edit,
               keyboardType: TextInputType.name,
-              initialValue: data.userDetails!.outletName != null
-                  ? data.userDetails!.outletName!
-                  : "",
+              initialValue: "",
               decoration: InputDecoration(
                 isDense: true,
                 labelText: 'Restaurant Name'.toUpperCase(),
@@ -219,9 +220,10 @@ class _ProfilePageState extends State<ProfilePage> {
               enabled: edit,
               maxLines: null,
               keyboardType: TextInputType.multiline,
-              initialValue: data.userDetails!.outletAddress != ""
+              initialValue: /* data.userDetails!.outletAddress != ""
                   ? data.userDetails!.outletAddress
-                  : "-",
+                  : */
+                  "-",
               decoration: InputDecoration(
                 isDense: true,
                 labelText: 'Address'.toUpperCase(),
@@ -250,7 +252,7 @@ class _ProfilePageState extends State<ProfilePage> {
               name: 'mobile',
               enabled: edit,
               keyboardType: TextInputType.number,
-              initialValue: data.userDetails!.mobile!,
+              initialValue: /* data.userDetails!.mobile! */ '99999999999',
               decoration: InputDecoration(
                 isDense: true,
                 labelText: 'Mobile Number'.toUpperCase(),
@@ -284,7 +286,7 @@ class _ProfilePageState extends State<ProfilePage> {
               name: 'email',
               enabled: edit,
               keyboardType: TextInputType.emailAddress,
-              initialValue: data.userDetails!.email!,
+              initialValue: /* data.userDetails!.email! */ '',
               decoration: InputDecoration(
                 isDense: true,
                 labelText: 'Email'.toUpperCase(),
@@ -428,72 +430,77 @@ class _ProfilePageState extends State<ProfilePage> {
             SizedBox(
               height: 10,
             ),*/
-            data.userDetails!.licenseImage != ""
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Licence image'.toUpperCase(),
-                        style: TextStyle(
-                          color: (Colors.orange[900])!,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Container(
-                        height: 150,
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        margin: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: NetworkImage("${data.profileBaseurl}" +
-                                data.userDetails!.licenseImage!),
+            /* data.userDetails!.licenseImage != ""
+                ? */
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Licence image'.toUpperCase(),
+                  style: TextStyle(
+                    color: (Colors.orange[900])!,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Container(
+                  height: 150,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  margin: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage("https://i.stack.imgur.com/cnOF3.png"
+                          /* "${data.profileBaseurl}" +
+                          data.userDetails!.licenseImage! */
                           ),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                    ],
-                  )
-                : Container(),
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+              ],
+            ),
             SizedBox(
               height: 10,
             ),
-            data.userDetails!.gstImage != ""
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Gst image'.toUpperCase(),
-                        style: TextStyle(
-                          color: (Colors.orange[900])!,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Container(
-                        height: 150,
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        margin: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: NetworkImage("${data.profileBaseurl}" +
-                                data.userDetails!.gstImage!),
+            /* data.userDetails!.gstImage != ""
+                ?  */
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Gst image'.toUpperCase(),
+                  style: TextStyle(
+                    color: (Colors.orange[900])!,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Container(
+                  height: 150,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  margin: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage("https://i.stack.imgur.com/cnOF3.png"
+                          /* "${data.profileBaseurl}" +
+                          data.userDetails!.gstImage! */
                           ),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                    ],
-                  )
-                : Container(),
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+              ],
+            ),
             FormBuilderTextField(
               name: 'gst',
               enabled: edit,
               keyboardType: TextInputType.text,
-              initialValue: data.userDetails!.gstNumber != null
+              initialValue: /* data.userDetails!.gstNumber != null
                   ? data.userDetails!.gstNumber!
-                  : "-",
+                  : */
+                  "-",
               decoration: InputDecoration(
                 isDense: true,
                 labelText: 'Gst number'.toUpperCase(),
@@ -550,31 +557,32 @@ class _ProfilePageState extends State<ProfilePage> {
             SizedBox(
               height: 10,
             ),
-            if (data.userDetails!.fssaiNumber != null)
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'fssai Number'.toUpperCase(),
-                    style: TextStyle(
-                      color: (Colors.orange[900])!,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
+            // if (data.userDetails!.fssaiNumber != null)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'fssai Number'.toUpperCase(),
+                  style: TextStyle(
+                    color: (Colors.orange[900])!,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
                   ),
-                  Text(
-                    data.userDetails!.fssaiNumber!,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                    ),
+                ),
+                Text(
+                  "--",
+                  // data.userDetails!.fssaiNumber!,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
                   ),
-                  SizedBox(
-                    height: 10,
-                  )
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 10,
+                )
+              ],
+            ),
 
             /*  FormBuilderTextField(
               name: 'fssai Exp date',
@@ -606,87 +614,90 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),*/
 
-            if (data.userDetails!.fssaiExpiryDate != null)
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'fssai Expiry Date'.toUpperCase(),
-                    style: TextStyle(
-                      color: (Colors.orange[900])!,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
+            // if (data.userDetails!.fssaiExpiryDate != null)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'fssai Expiry Date'.toUpperCase(),
+                  style: TextStyle(
+                    color: (Colors.orange[900])!,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
                   ),
-                  Text(
-                    data.userDetails!.fssaiExpiryDate!,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                    ),
+                ),
+                Text(
+                  "--",
+                  // data.userDetails!.fssaiExpiryDate!,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
                   ),
-                  SizedBox(
-                    height: 10,
-                  )
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 10,
+                )
+              ],
+            ),
             SizedBox(
               height: 10,
             ),
-            if (data.userDetails!.longitude != null)
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'longitude'.toUpperCase(),
-                    style: TextStyle(
-                      color: (Colors.orange[900])!,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
+            // if (data.userDetails!.longitude != null)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'longitude'.toUpperCase(),
+                  style: TextStyle(
+                    color: (Colors.orange[900])!,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
                   ),
-                  Text(
-                    data.userDetails!.longitude!,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                    ),
+                ),
+                Text(
+                  "--",
+                  // data.userDetails!.longitude!,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
                   ),
-                  SizedBox(
-                    height: 10,
-                  )
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 10,
+                )
+              ],
+            ),
             SizedBox(
               height: 10,
             ),
-            if (data.userDetails!.latitude != null)
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'latitude'.toUpperCase(),
-                    style: TextStyle(
-                      color: (Colors.orange[900])!,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
+            // if (data.userDetails!.latitude != null)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'latitude'.toUpperCase(),
+                  style: TextStyle(
+                    color: (Colors.orange[900])!,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
                   ),
-                  Text(
-                    data.userDetails!.latitude!,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                    ),
+                ),
+                Text(
+                  "--",
+                  // data.userDetails!.latitude!,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
                   ),
-                  SizedBox(
-                    height: 10,
-                  )
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 10,
+                )
+              ],
+            ),
             /* SizedBox(
               height: 10,
             ),
@@ -773,31 +784,32 @@ class _ProfilePageState extends State<ProfilePage> {
             //       )
             //     ],
             //   ),
-            if (data.userDetails!.deliveryTime != null)
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Delivery Time'.toUpperCase(),
-                    style: TextStyle(
-                      color: (Colors.orange[900])!,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                    ),
+            // if (data.userDetails!.deliveryTime != null)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Delivery Time'.toUpperCase(),
+                  style: TextStyle(
+                    color: (Colors.orange[900])!,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
                   ),
-                  Text(
-                    data.userDetails!.deliveryTime!,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                    ),
+                ),
+                Text(
+                  "15:08",
+                  // data.userDetails!.deliveryTime!,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
                   ),
-                  SizedBox(
-                    height: 10,
-                  )
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 10,
+                )
+              ],
+            ),
             Divider(),
           ],
         ),
@@ -890,7 +902,7 @@ class _ProfilePageState extends State<ProfilePage> {
         });
   }
 
-  Widget walletDetails(ProfileModel profileModel) {
+  Widget walletDetails(/* ProfileModel profileModel */) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -934,7 +946,7 @@ class _ProfilePageState extends State<ProfilePage> {
               fontWeight: FontWeight.w600,
             ),
           ),
-          profileModel.userDetails!.requestAmt != ""
+          /*  profileModel.userDetails!.requestAmt != ""
               ? Text(
                   "₹ " + profileModel.userDetails!.requestAmt!,
                   style: TextStyle(
@@ -942,7 +954,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     fontWeight: FontWeight.w300,
                   ),
                 )
-              : Text("-"),
+              : */
+          Text("-"),
           SizedBox(
             height: 20,
           ),

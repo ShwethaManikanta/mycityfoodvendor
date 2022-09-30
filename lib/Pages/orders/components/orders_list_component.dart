@@ -66,8 +66,7 @@ class _OrdersOngoingDeliveryListCompontentState
                       decoration: new BoxDecoration(
                         image: new DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage(
-                              "assets/images/deliveryboy2.png"),
+                          image: AssetImage("assets/images/deliveryboy2.png"),
                         ),
                       )),
                 ),
@@ -150,7 +149,7 @@ class _OrdersOngoingDeliveryListCompontentState
                 SizedBox(
                   height: 5,
                 ),
-                Text(widget.orderHistory.status!.toUpperCase()),
+                Text('ongoing'.toUpperCase()),
                 SizedBox(
                   height: 5,
                 ),
@@ -181,7 +180,7 @@ class _OrdersOngoingDeliveryListCompontentState
                         color: Colors.white,
                       ),
                       onPressed: () async {
-                        launchCaller(widget.orderHistory.customerName!.mobile!);
+                        // launchCaller(widget.orderHistory.customerName!.mobile!);
                       },
                     )),
               ],
@@ -311,7 +310,7 @@ class _OrdersOngoingDeliveryListCompontentState
               child: Text(
                 'Cancel Order'.toUpperCase(),
                 style: TextStyle(
-                  color: (Colors.deepPurple)!,
+                  color: (Colors.deepPurple),
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 0.2,
@@ -330,7 +329,7 @@ class _OrdersOngoingDeliveryListCompontentState
                   hintText: 'Write Your Reason To Cancel',
                   border: UnderlineInputBorder(),
                 ),
-                cursorColor: (Colors.deepPurple)!,
+                cursorColor: (Colors.deepPurple),
               ),
             ),
             SizedBox(
@@ -405,9 +404,11 @@ class _OrdersOngoingDeliveryListCompontentState
 //Ongoing Order TakwAway And Dining Model
 
 class OrdersOngoingTakeAwayComponent extends StatefulWidget {
-  const OrdersOngoingTakeAwayComponent({Key? key, required this.orderHistory})
-      : super(key: key);
-  final OrderHistory orderHistory;
+  const OrdersOngoingTakeAwayComponent({
+    Key? key,
+    /* required this.orderHistory */
+  }) : super(key: key);
+  // final OrderHistory orderHistory;
   @override
   State<OrdersOngoingTakeAwayComponent> createState() =>
       _OrdersOngoingTakeAwayComponentState();
@@ -445,37 +446,29 @@ class _OrdersOngoingTakeAwayComponentState
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        dining ? "Dining" : "Take Away",
+                        "Take Away",
+                        // dining ? "Dining" : "Take Away",
                         style: CommonStyles.textDataWhite18(),
                       ),
                       Utils.getSizedBox(height: 5),
                       Text(
-                        "#OID0" + widget.orderHistory.id!,
+                        "#OID0",
+                        // "#OID0" + widget.orderHistory.id!,
                         style: CommonStyles.textDataWhite13(),
                       ),
                     ],
                   ),
                 ),
                 Flexible(
-                  child: dining
-                      ? Container(
-                          height: 100,
-                          width: 150,
-                          decoration: new BoxDecoration(
-                            image: new DecorationImage(
-                                fit: BoxFit.contain,
-                                image: AssetImage(
-                                    "assets/icons/diningfamily2.jpg")),
-                          ))
-                      : Container(
-                          height: 100,
-                          width: 100,
-                          decoration: new BoxDecoration(
-                            image: new DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage("assets/icons/take_away.png"),
-                            ),
-                          )),
+                  child: Container(
+                      height: 100,
+                      width: 100,
+                      decoration: new BoxDecoration(
+                        image: new DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage("assets/icons/take_away.png"),
+                        ),
+                      )),
                 ),
               ],
             ),
@@ -487,7 +480,7 @@ class _OrdersOngoingTakeAwayComponentState
                 Row(
                   children: [
                     Text(
-                      widget.orderHistory.customerName!.customerName!,
+                      "costomer name", // widget.orderHistory.customerName!.customerName!,
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 18,
@@ -506,7 +499,7 @@ class _OrdersOngoingTakeAwayComponentState
                 SizedBox(
                   height: 5,
                 ),
-                widget.orderHistory.productDetails == null
+                /* widget.orderHistory.productDetails == null
                     ? Text(
                         'Currently items not available'.toUpperCase(),
                         style: TextStyle(
@@ -516,19 +509,20 @@ class _OrdersOngoingTakeAwayComponentState
                             letterSpacing: 0,
                             wordSpacing: 1),
                       )
-                    : Text(
-                        "Products Available",
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            letterSpacing: 0,
-                            wordSpacing: 1),
-                      ),
+                    :  */
+                Text(
+                  "Products Available",
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 0,
+                      wordSpacing: 1),
+                ),
                 SizedBox(
                   height: 5,
                 ),
-                Text(widget.orderHistory.status!.toUpperCase()),
+                Text('order is preparing'.toUpperCase()),
                 SizedBox(
                   height: 5,
                 ),
@@ -559,29 +553,30 @@ class _OrdersOngoingTakeAwayComponentState
                         color: Colors.red,
                       ),
                       onPressed: () async {
-                        launchCaller(widget.orderHistory.customerName!.mobile!);
+                        // launchCaller(widget.orderHistory.customerName!.mobile!);
                       },
                     )),
               ],
             ),
-            children:
-                List.generate(widget.orderHistory.productDetails!.length, (i) {
-              return ListTile(
-                title:
-                    Text(widget.orderHistory.productDetails![i].productName!),
-                subtitle: Text('Quantity : ' +
-                    widget.orderHistory.productDetails![i].qty!),
-                trailing: Text('₹ ' +
-                    widget.orderHistory.productDetails![i].price.toString()),
-              );
-            }).toList(growable: true),
+            // children:
+            //     List.generate(widget.orderHistory.productDetails!.length, (i) {
+            //   return ListTile(
+            //     title: Text("productName!"),
+            //     subtitle: Text(
+            //         'Quantity : ' /* widget.orderHistory.productDetails![i].qty! */),
+            //     trailing: Text(
+            //         '₹ 299' /* +
+            //         widget.orderHistory.productDetails![i].price.toString() */
+            //         ),
+            //   );
+            // }).toList(growable: true),
           ),
           // getProperButton(orderHistoryModel.orderHistory![index].status!)
+          // Visibility(
+          //     visible: widget.orderHistory.status! == "Ordered",
+          //     child: getAcceptRejectButton()),
           Visibility(
-              visible: widget.orderHistory.status! == "Ordered",
-              child: getAcceptRejectButton()),
-          Visibility(
-              visible: widget.orderHistory.status! == "Ongoing",
+              // visible: widget.orderHistory.status! == "Ongoing",
               child: getCompleteButton()),
         ],
       ),
@@ -601,15 +596,15 @@ class _OrdersOngoingTakeAwayComponentState
                     elevation: 0,
                     padding: EdgeInsets.all(8)),
                 onPressed: () async {
-                  Map param = {
-                    "order_id": widget.orderHistory.id,
-                    "status": "2",
-                  };
-                  showLoading(context);
-                  await getapi.acceptcancelorder(context, param);
-                  await context.read<OrderHistoryAPIProvider>().getOrders();
-                  context.read<OrdersCompletedAPIProvider>().getOrders();
-                  Navigator.of(context).pop();
+                  // Map param = {
+                  //   "order_id": widget.orderHistory.id,
+                  //   "status": "2",
+                  // };
+                  // showLoading(context);
+                  // await getapi.acceptcancelorder(context, param);
+                  // await context.read<OrderHistoryAPIProvider>().getOrders();
+                  // context.read<OrdersCompletedAPIProvider>().getOrders();
+                  // Navigator.of(context).pop();
                 },
                 child: Text('Complete Order'.toUpperCase())),
           ),
@@ -641,7 +636,7 @@ class _OrdersOngoingTakeAwayComponentState
                   padding: EdgeInsets.all(10)),
               onPressed: () async {
                 Map param = {
-                  "order_id": widget.orderHistory.id,
+                  "order_id": 'widget.orderHistory.id',
                   "status": "4",
                 };
                 await getapi.acceptcancelorder(context, param);
@@ -661,7 +656,7 @@ class _OrdersOngoingTakeAwayComponentState
               onPressed: () async {
                 await showDialog(
                     context: context,
-                    builder: (context) => dialog(widget.orderHistory.id!));
+                    builder: (context) => dialog('widget.orderHistory.id!'));
               },
               child: Text('Cancel'.toUpperCase())),
         ),
@@ -689,7 +684,7 @@ class _OrdersOngoingTakeAwayComponentState
               child: Text(
                 'Cancel Order'.toUpperCase(),
                 style: TextStyle(
-                  color: (Colors.deepPurple)!,
+                  color: (Colors.deepPurple),
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 0.2,
@@ -708,7 +703,7 @@ class _OrdersOngoingTakeAwayComponentState
                   hintText: 'Write Your Reason To Cancel',
                   border: UnderlineInputBorder(),
                 ),
-                cursorColor: (Colors.deepPurple)!,
+                cursorColor: (Colors.deepPurple),
               ),
             ),
             SizedBox(
